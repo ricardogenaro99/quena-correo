@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>¡Ya tienes tu entrada!</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			html {
+				box-sizing: border-box;
+				font-size: 16px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: inherit;
+				font-family: 'Inter', sans-serif;
+				font-style: normal;
+			}
+
+			body,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			ol,
+			ul {
+				margin: 0;
+				padding: 0;
+				font-weight: normal;
+			}
+
+			ol,
+			ul {
+				list-style: none;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.card {
+				box-sizing: border-box;
+				background: #ffffff;
+				border: 1px solid #e0e7ff;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				max-width: 528px;
+				padding: 35px min(80px, 5%);
+				padding-bottom: 40px;
+			}
+
+			.check {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.title {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 29px;
+				text-align: center;
+				color: #000000;
+			}
+
+			.info {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+			}
+
+			.info,
+			span {
+				color: #333333;
+			}
+
+			.container {
+				margin: auto;
+				display: grid;
+				width: 100%;
+				gap: 30px;
+				grid-auto-rows: auto;
+			}
+
+			.container-grid {
+				grid-template-columns: repeat(
+					auto-fill,
+					minmax(min(100%, 150px), 1fr)
+				) !important;
+				justify-content: space-between;
+			}
+
+			.box-label-value {
+				display: grid;
+				gap: 12px;
+			}
+
+			span.label {
+				font-weight: 700;
+			}
+
+			span.value {
+				font-weight: 400;
+			}
+
+			.container-notification {
+				margin-top: 50px;
+				display: grid;
+				grid-template-columns: 20px 1fr;
+				align-items: center;
+				gap: 12px;
+				background: #eeeaff;
+				border-radius: 8px;
+				padding: 18px 24px;
+			}
+
+			.container-notification > p {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				color: #333333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="logo">
+				<svg
+					width="70"
+					height="16"
+					viewBox="0 0 70 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M4.56675 16C4.0787 16 3.86953 15.7927 3.86953 15.3089V14.2376C0.836658 13.7883 0 12.3715 0 10.4017V3.97408C0 1.58963 1.18526 0 6.10061 0C10.9811 0 12.1664 1.62419 12.1664 3.97408V10.4017C12.1664 12.3715 11.3646 13.7883 8.29684 14.2376V15.3089C8.29684 15.7927 8.08767 16 7.59962 16H4.56675ZM6.10061 10.9201C7.5299 10.9201 7.73907 10.54 7.73907 10.0216V4.69978C7.73907 4.18143 7.5299 3.8013 6.10061 3.8013C4.70619 3.8013 4.46216 4.18143 4.46216 4.69978V9.98704C4.46216 10.54 4.67133 10.9201 6.10061 10.9201Z"
+						fill="#6543FB"
+					/>
+					<path
+						d="M20.951 14.5481C16.1054 14.5481 14.8853 12.9585 14.8853 10.574V1.00169C14.8853 0.51789 15.0944 0.310547 15.5825 0.310547H18.6502C19.1383 0.310547 19.3474 0.51789 19.3474 1.00169V9.84834C19.3474 10.3667 19.5914 10.7468 20.951 10.7468C22.3454 10.7468 22.5895 10.3667 22.5895 9.84834V1.00169C22.5895 0.51789 22.7986 0.310547 23.2867 0.310547H26.2498C26.7379 0.310547 26.947 0.51789 26.947 1.00169V10.6086C26.9819 12.9585 25.7966 14.5481 20.951 14.5481Z"
+						fill="#6543FB"
+					/>
+					<path
+						d="M30.5727 14.2717C30.0847 14.2717 29.8755 14.0643 29.8755 13.5805V1.00169C29.8755 0.51789 30.0847 0.310547 30.5727 0.310547H39.6713C40.1594 0.310547 40.3685 0.51789 40.3685 1.00169V3.28247C40.3685 3.76627 40.1594 3.97361 39.6713 3.97361H34.2679V5.45958H38.1026C38.5907 5.45958 38.7998 5.66692 38.7998 6.15072V8.22415C38.7998 8.70796 38.5907 8.9153 38.1026 8.9153H34.2679V10.574H39.6713C40.1594 10.574 40.3685 10.7814 40.3685 11.2652V13.546C40.3685 14.0298 40.1594 14.2371 39.6713 14.2371H30.5727V14.2717Z"
+						fill="#6543FB"
+					/>
+					<path
+						d="M43.7499 14.2717C43.2619 14.2717 43.0527 14.0643 43.0527 13.5805V1.00169C43.0527 0.51789 43.2619 0.310547 43.7499 0.310547H45.7719C46.2948 0.310547 46.6085 0.448776 46.9223 0.828905L50.7221 5.14856V1.00169C50.7221 0.51789 50.9312 0.310547 51.4193 0.310547H54.3476C54.8356 0.310547 55.0448 0.51789 55.0448 1.00169V13.5805C55.0448 14.0643 54.8356 14.2717 54.3476 14.2717H51.4193C50.9312 14.2717 50.7221 14.0643 50.7221 13.5805V11.1961L47.3755 7.18744V13.5805C47.3755 14.0643 47.1663 14.2717 46.6782 14.2717H43.7499Z"
+						fill="#6543FB"
+					/>
+					<path
+						d="M61.3895 14.272H58.496C58.008 14.272 57.7988 14.0647 57.7988 13.5809V8.43188C57.7988 7.67162 58.0429 6.66946 58.5658 5.32172L60.2739 0.932955C60.4134 0.48371 60.7271 0.276367 61.2849 0.276367H66.5489C67.0718 0.276367 67.3855 0.48371 67.525 0.932955L69.2331 5.32172C69.756 6.66946 70.0001 7.63706 70.0001 8.43188V13.5463C70.0001 14.0301 69.7909 14.2375 69.3028 14.2375H66.3397C65.8168 14.2375 65.5728 14.0301 65.5728 13.5463V10.8163H62.1215V13.5463C62.0867 14.0647 61.8775 14.272 61.3895 14.272ZM62.2959 7.32604H65.3636L64.4572 4.38868C64.3526 4.14678 64.248 4.04311 64.0737 4.04311H63.5857C63.4463 4.04311 63.3068 4.14678 63.2022 4.38868L62.2959 7.32604Z"
+						fill="#6543FB"
+					/>
+				</svg>
+			</div>
+			<div class="check">
+				<svg
+					width="40"
+					height="40"
+					viewBox="0 0 40 40"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M20 0C8.97243 0 0 8.97243 0 20C0 31.0276 8.97243 40 20 40C31.0276 40 40 31.0276 40 20C40 8.97243 31.0276 0 20 0ZM31.1779 14.7368L18.396 27.4185C17.6441 28.1704 16.4411 28.2206 15.6391 27.4687L8.87218 21.3033C8.07018 20.5514 8.02005 19.2982 8.7218 18.4962C9.47368 17.6942 10.7268 17.6441 11.5288 18.396L16.8922 23.3083L28.3208 11.8797C29.1228 11.0777 30.3759 11.0777 31.1779 11.8797C31.9799 12.6817 31.9799 13.9348 31.1779 14.7368Z"
+						fill="#6237E2"
+					/>
+				</svg>
+			</div>
+			<h3 class="title">¡Ya tienes tu entrada!</h3>
+			<p class="info">
+				Gracias por usar Quena, te enviamos el detalle de tu compra
+			</p>
+			<div class="container">
+				<div class="box-label-value">
+					<span class="label">Evento</span
+					><span class="value">Nombre de Evento</span>
+				</div>
+				<div class="box-label-value">
+					<span class="label">Dónde</span
+					><span class="value">Nombre del local</span>
+				</div>
+
+				<div class="box-label-value">
+					<span class="label">Fecha y hora</span
+					><span class="value">viernes 26 de mayo, 2023 - 10:00 PM</span>
+				</div>
+				<div class="container container-grid">
+					<div class="box-label-value">
+						<span class="label">Nombre</span
+						><span class="value">Carlos Mendoza</span>
+					</div>
+					<div class="box-label-value">
+						<span class="label">Correo</span
+						><span class="value">carlos@gmail.com</span>
+					</div>
+					<div class="box-label-value">
+						<span class="label">Precio</span>
+						<span class="value">S/ 30.00</span>
+					</div>
+					<div class="box-label-value">
+						<span class="label">Pagaste con</span>
+						<span class="value">Visa **** 1234</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-notification">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M9 3.88218V17.2402C9 18.2121 8.2121 19 7.24018 19C6.49646 19 5.83302 18.5325 5.58288 17.8321L3.43647 11.6829M16 11C17.6569 11 19 9.65685 19 8C19 6.34315 17.6569 5 16 5M3.43647 11.6829C2.0043 11.0741 1 9.65433 1 8C1 5.79086 2.79086 4 4.99999 4H6.83208C10.9327 4 14.4569 2.7659 16 1L16 15C14.4569 13.2341 10.9327 12 6.83208 12L4.99998 12C4.44518 12 3.91677 11.887 3.43647 11.6829Z"
+						stroke="#111827"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+				<p>
+					Es necesario que lleves tu documento de identidad para que sea
+					validado en la puerta del Evento
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
